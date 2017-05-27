@@ -1,0 +1,21 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "mariadb": {
+    "client": "mysql",
+    "connection":{
+      "host": "127.0.0.1",
+      "user": "pets_local",
+      "password": "pets101",
+      "database": "pets_local",
+      "charset": "utf8mb4",
+      "timezone": "+0800"
+    },
+    "pool": {"min" : 1, "max": 7}
+  }
+}

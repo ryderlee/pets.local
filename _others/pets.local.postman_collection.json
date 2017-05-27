@@ -1,0 +1,187 @@
+{
+	"variables": [],
+	"info": {
+		"name": "pets.local",
+		"_postman_id": "0287b919-123a-652d-d0e7-f78b176df260",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get Pets",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var json = JSON.parse(responseBody)",
+							"var i = 0",
+							"for (i = 0 ; json.sports[i].name != 'Soccer' && i < json.sports.length;  i++);",
+							"",
+							"postman.setEnvironmentVariable(\"sportId\", json.sports[i].id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:3030/pets",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{header-authorization}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "post Pets",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var json = JSON.parse(responseBody)",
+							"var i = 0",
+							"for (i = 0 ; json.sports[i].name != 'Soccer' && i < json.sports.length;  i++);",
+							"",
+							"postman.setEnvironmentVariable(\"sportId\", json.sports[i].id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:3030/pets",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{header-authorization}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\"name\":\"Roddy\",\n\t\"available_from\":\"2017-01-01 00:00:00\",\n\t\"age\":12,\n\t\"species\":\"dog\",\n\t\"breed\":\"poodle\"\n\t}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get Trans",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var json = JSON.parse(responseBody)",
+							"var i = 0",
+							"for (i = 0 ; json.sports[i].name != 'Soccer' && i < json.sports.length;  i++);",
+							"",
+							"postman.setEnvironmentVariable(\"sportId\", json.sports[i].id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:3030/customers",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{header-authorization}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get Pets->Matches",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var json = JSON.parse(responseBody)",
+							"var i = 0",
+							"for (i = 0 ; json.sports[i].name != 'Soccer' && i < json.sports.length;  i++);",
+							"",
+							"postman.setEnvironmentVariable(\"sportId\", json.sports[i].id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:3030/accounts",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{header-authorization}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "post Customers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var json = JSON.parse(responseBody)",
+							"var i = 0",
+							"for (i = 0 ; json.sports[i].name != 'Soccer' && i < json.sports.length;  i++);",
+							"",
+							"postman.setEnvironmentVariable(\"sportId\", json.sports[i].id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:3030/customers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{header-authorization}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\"name\":\"Roddy\",\n\t\"preferred_age_upper_bound\":20,\n\t\"preferred_age_lower_bound\":1,\n\t\"preferred_species\":\"dog\",\n\t\"preferred_breed\":\"poodle\"\n\t}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
